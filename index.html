@@ -31,13 +31,33 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
-        header {
- 	    background: url('images/dp.jpg') center/cover no-repeat;
-  	    color: white;
-  	    padding: 60px 20px;
- 	    text-align: center;
- 	    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
-        }
+       header {
+    background: url('images/dp.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+    position: relative;
+}
+
+/* Add overlay for better text readability */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+header * {
+    position: relative;
+    z-index: 2;
+}
 
         header h1 {
             font-size: 2.5rem;
